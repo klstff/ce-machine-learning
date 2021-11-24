@@ -16,10 +16,10 @@ def cria_modelo(X:pd.DataFrame ,y:pd.Series ,min_samples_split:float):
     #instancia a arvore de decisão (use  a classe DecisionTreeClassifier do Scikitlearn, defina o
     #..parametro min_samples_split e random_state=1 - é muito importante manter a seed fixa para
     #..que os sejam resultados mantenham sempre o mesmo - reprodutibilidade)
-    decision_tree = None
+    decision_tree = DecisionTreeClassifier(min_samples_split = min_samples_split, random_state = 1)
 
     #retone o modelo por meio do método fit
-    return None
+    return decision_tree.fit(X, y)
 
 def divide_treino_teste(df:pd.DataFrame, val_proporcao_treino:float) -> Tuple[pd.DataFrame,pd.DataFrame]:
     """
